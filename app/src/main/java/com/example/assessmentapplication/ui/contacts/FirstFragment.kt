@@ -26,7 +26,9 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = initJsonReader()?.let { ContactsAdapter(it) }
+        val adapter = initJsonReader()?.let {
+            ContactsAdapter(it)
+        }
         binding.rvContacts.adapter = adapter
         binding.rvContacts.layoutManager = LinearLayoutManager(requireContext())
     }
