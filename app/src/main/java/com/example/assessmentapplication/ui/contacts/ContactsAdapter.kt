@@ -4,8 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assessmentapplication.databinding.ItemContactBinding
+import com.example.assessmentapplication.util.Contact
 
-class ContactsAdapter(val item: List<Any>) : RecyclerView.Adapter<ContactsAdapter.Viewholder>() {
+class ContactsAdapter(private val item: List<Contact>) :
+    RecyclerView.Adapter<ContactsAdapter.Viewholder>() {
 
     class Viewholder(val binding: ItemContactBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -20,7 +22,7 @@ class ContactsAdapter(val item: List<Any>) : RecyclerView.Adapter<ContactsAdapte
     }
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
-        holder.binding.tvTitle
+        holder.binding.tvTitle.text = item[position].firstName + " " + item[position].lastName
     }
 
     override fun getItemCount(): Int {

@@ -1,10 +1,12 @@
 package com.example.assessmentapplication.util
 
-data class Contact(val title: String)
+import com.squareup.moshi.JsonClass
 
-data class ContactDetails(
-    val firstName: String,
-    val lastName: String,
-    val email: String,
-    val phone: String
+@JsonClass(generateAdapter = true)
+data class Contact(
+    val id: String = "",
+    val firstName: String = "",
+    val lastName: String = "",
+    val email: String = "",
+    val phone: String = ""
 )
